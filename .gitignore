@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+src/AnyTongue.Web/wwwroot/css/bootstrap/
+src/AnyTongue.Web/wwwroot/css/open-iconic/

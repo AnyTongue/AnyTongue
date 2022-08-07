@@ -1,0 +1,14 @@
+{
+  "name": "anytongue.styles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:scss": "sass --watch main.scss:../AnyTongue.Web/wwwroot/css/site.css"
+  },
+  "author": "penCsharpener",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "sass": "^1.54.3"
+  }
+}
