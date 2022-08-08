@@ -29,7 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyTongue.Styles", "src\AnyTongue.Styles\AnyTongue.Styles.csproj", "{690AB0CC-BDC3-4CD0-826F-14C175E75736}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.Styles", "src\AnyTongue.Styles\AnyTongue.Styles.csproj", "{690AB0CC-BDC3-4CD0-826F-14C175E75736}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyTongue.Worker", "src\AnyTongue.Worker\AnyTongue.Worker.csproj", "{48441CFF-0DEF-48EC-AA58-5C15014FA893}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{690AB0CC-BDC3-4CD0-826F-14C175E75736}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{690AB0CC-BDC3-4CD0-826F-14C175E75736}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{690AB0CC-BDC3-4CD0-826F-14C175E75736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48441CFF-0DEF-48EC-AA58-5C15014FA893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48441CFF-0DEF-48EC-AA58-5C15014FA893}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48441CFF-0DEF-48EC-AA58-5C15014FA893}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48441CFF-0DEF-48EC-AA58-5C15014FA893}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{375D7F96-E594-4730-A701-8033BA5BFBBC} = {DE4223C3-7F08-4F2D-9578-05D768C49A2F}
 		{C77692A8-4EA9-480F-A4CD-132787DDCB69} = {DE4223C3-7F08-4F2D-9578-05D768C49A2F}
 		{690AB0CC-BDC3-4CD0-826F-14C175E75736} = {DE4223C3-7F08-4F2D-9578-05D768C49A2F}
+		{48441CFF-0DEF-48EC-AA58-5C15014FA893} = {DE4223C3-7F08-4F2D-9578-05D768C49A2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ACD03668-E05F-4140-B8D9-C863320E66CC}
