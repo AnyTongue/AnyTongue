@@ -1,4 +1,5 @@
 using Coravel;
+using Serilog;
 
 namespace AnyTongue.Worker;
 
@@ -9,6 +10,8 @@ public class Program
         var host = Host.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration(ConfigureApp)
             .ConfigureServices(ConfigureServices)
+            .UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration))
+            .UseWindowsService()
             .Build();
 
         host.Services.UseScheduler(scheduler =>
