@@ -1,8 +1,8 @@
 ﻿@page
-@using AnyTongue.Domain.Models
 @using Microsoft.AspNetCore.Identity
 @attribute [IgnoreAntiforgeryToken]
 @inject SignInManager<AppUser> SignInManager
+
 @functions {
     public async Task<IActionResult> OnPost()
     {

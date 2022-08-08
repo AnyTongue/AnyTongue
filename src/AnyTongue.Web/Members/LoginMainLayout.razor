@@ -1,8 +1,7 @@
-﻿@inherits LayoutComponentBase
-
-<MudThemeProvider />
-<MudDialogProvider />
-<MudSnackbarProvider />
+﻿@using AnyTongue.Web.Pages
+@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+@layout EmptyLayout
 
 <MudLayout>
   <MudAppBar Elevation="0">
@@ -17,7 +16,7 @@
     <NavMenu />
   </MudDrawer>
   <MudMainContent>
-    <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pt-16">
+    <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pa-16">
       @Body
     </MudContainer>
   </MudMainContent>

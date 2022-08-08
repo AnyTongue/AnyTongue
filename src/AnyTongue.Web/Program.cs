@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.EntityFrameworkCore;
 using MudBlazor.Services;
 using Serilog;
+using Microsoft.AspNetCore.Identity;
 
 namespace AnyTongue.Web;
 public class Program
