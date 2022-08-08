@@ -1,3 +1,4 @@
+using AnyTongue.Application.Extensions;
 using AnyTongue.Domain.Models;
 using AnyTongue.Persistence;
 using AnyTongue.Web.Areas.Identity;
@@ -22,6 +23,7 @@ public class Program
         builder.Services.AddServerSideBlazor();
         builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<AppUser>>();
         builder.Services.AddMudServices();
+        builder.Services.RegisterApplicationServices();
 
         var app = builder.Build();
 

@@ -1,3 +1,4 @@
+using AnyTongue.Application.Extensions;
 using Serilog;
 
 namespace AnyTongue.Api;
@@ -13,6 +14,7 @@ public class Program
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+        builder.Services.RegisterApplicationServices();
 
         var app = builder.Build();
 

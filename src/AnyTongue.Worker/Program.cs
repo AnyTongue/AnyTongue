@@ -1,3 +1,4 @@
+using AnyTongue.Application.Extensions;
 using Coravel;
 using Serilog;
 
@@ -25,6 +26,7 @@ public class Program
     private static void ConfigureServices(IServiceCollection services)
     {
         services.AddHostedService<Worker>();
+        services.RegisterApplicationServices();
     }
 
     private static void ConfigureApp(HostBuilderContext context, IConfigurationBuilder configBuilder)
