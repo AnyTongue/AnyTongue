@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -18,6 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Using Include="Microsoft.EntityFrameworkCore"/>
+    <Using Include="AnyTongue.Domain.Models"/>
     <ProjectReference Include="..\AnyTongue.Domain\AnyTongue.Domain.csproj" />
   </ItemGroup>
 
