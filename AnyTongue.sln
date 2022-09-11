@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.Styles", "src\Any
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.Worker", "src\AnyTongue.Worker\AnyTongue.Worker.csproj", "{48441CFF-0DEF-48EC-AA58-5C15014FA893}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyTongue.Web.Tests", "tests\AnyTongue.Web.Tests\AnyTongue.Web.Tests.csproj", "{97EE231F-7465-4672-94B4-5D3E91947032}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.Web.Tests", "tests\AnyTongue.Web.Tests\AnyTongue.Web.Tests.csproj", "{97EE231F-7465-4672-94B4-5D3E91947032}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.Api.Tests", "tests\AnyTongue.Api.Tests\AnyTongue.Api.Tests.csproj", "{26899242-796A-4F4A-B62C-03DC63A374C9}"
 EndProject
@@ -48,6 +48,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.Shared.Tests", "tests\AnyTongue.Shared.Tests\AnyTongue.Shared.Tests.csproj", "{731F5FAD-D4F2-4D2D-9335-7CDFE3D8CD0D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.Worker.Tests", "tests\AnyTongue.Worker.Tests\AnyTongue.Worker.Tests.csproj", "{F2814CA0-F955-4F5F-8E64-17411742CF1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyTongue.MigrationsConsole", "src\AnyTongue.MigrationsConsole\AnyTongue.MigrationsConsole.csproj", "{6D7E1265-A356-4A0F-BC75-FDF5C9726DBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{F2814CA0-F955-4F5F-8E64-17411742CF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2814CA0-F955-4F5F-8E64-17411742CF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2814CA0-F955-4F5F-8E64-17411742CF1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D7E1265-A356-4A0F-BC75-FDF5C9726DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D7E1265-A356-4A0F-BC75-FDF5C9726DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D7E1265-A356-4A0F-BC75-FDF5C9726DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D7E1265-A356-4A0F-BC75-FDF5C9726DBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -145,6 +151,7 @@ Global
 		{CBE4EFAB-9A55-4730-BF93-10EAD43D6DC3} = {7B9E9EB7-D2B4-4732-9801-4A01841D9E6A}
 		{731F5FAD-D4F2-4D2D-9335-7CDFE3D8CD0D} = {7B9E9EB7-D2B4-4732-9801-4A01841D9E6A}
 		{F2814CA0-F955-4F5F-8E64-17411742CF1A} = {7B9E9EB7-D2B4-4732-9801-4A01841D9E6A}
+		{6D7E1265-A356-4A0F-BC75-FDF5C9726DBD} = {DE4223C3-7F08-4F2D-9578-05D768C49A2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ACD03668-E05F-4140-B8D9-C863320E66CC}

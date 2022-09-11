@@ -23,7 +23,7 @@ public class Program
         host.Run();
     }
 
-    private static void ConfigureServices(IServiceCollection services)
+    private static void ConfigureServices(HostBuilderContext context, IServiceCollection services)
     {
         services.AddHostedService<Worker>();
         services.RegisterApplicationServices();
