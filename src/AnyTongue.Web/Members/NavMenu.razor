@@ -1,4 +1,10 @@
 ﻿<MudNavMenu>
-  <MudNavLink Href="content" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
-  <MudNavLink Href="content/counter" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Add">Counter</MudNavLink>
+  <MudNavLink Href="content/dashboard" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Dashboard</MudNavLink>
+  <MudNavGroup Title="Upload Content" Expanded="false" Icon="@Icons.Material.Filled.Add">
+    <MudNavLink Href="content/upload/bulk" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Bulk Upload</MudNavLink>
+    <MudNavLink Href="content/upload/zip" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.FolderZip">Zip Upload</MudNavLink>
+    <MudNavLink Href="content/upload/create" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Brush">Create Content</MudNavLink>
+  </MudNavGroup>
+  <MudNavLink Href="content/courses" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Flag">Courses</MudNavLink>
+  <MudNavLink Href="content/study" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Book">Study</MudNavLink>
 </MudNavMenu>

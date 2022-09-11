@@ -29,4 +29,8 @@
     <ProjectReference Include="..\AnyTongue.Infrastructure\AnyTongue.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Members\Pages\Courses\" />
+  </ItemGroup>
+
 </Project>
