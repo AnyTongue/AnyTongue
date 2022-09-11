@@ -10,7 +10,7 @@ public class AppUserConfiguration : IEntityTypeConfiguration<AppUser>
         var passwordHasher = new PasswordHasher<AppUser>();
 
         var adminEmail = "admin@example.com";
-        var adminUser = new AppUser()
+        var adminUser = new AppUser
         {
             Id = 1,
             UserName = adminEmail,
@@ -18,11 +18,11 @@ public class AppUserConfiguration : IEntityTypeConfiguration<AppUser>
             Email = adminEmail,
             NormalizedEmail = adminEmail.ToUpper(),
             EmailConfirmed = true,
-            ConcurrencyStamp = Guid.NewGuid().ToString(),
-            SecurityStamp = Guid.NewGuid().ToString()
+            ConcurrencyStamp = "ecce3dc6-6fda-4b42-805d-c91ec950af6e",
+            SecurityStamp = "a7e9e6d0-2f61-49b9-8240-17d04df7fb61",
+            // secretAdminPassword123!!!
+            PasswordHash = "AQAAAAEAACcQAAAAEEIvb/VbgsuvrAzJ/6TnEaCv1/Mfr0yVi5R5ki3P6l5cAY1lH9umYDMTeaveAzz+vQ=="
         };
-
-        adminUser.PasswordHash = passwordHasher.HashPassword(adminUser, "secretAdminPassword123!!!");
 
         builder.HasData(new AppUser[]
         {
