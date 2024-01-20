@@ -2,7 +2,10 @@
 
 namespace AnyTongue.Domain.Models;
 
-public class AppUser : IdentityUser<int>
+public class AppUser : IdentityUser
 {
-
+    public AppUser()
+    {
+        SecurityStamp = Guid.NewGuid().ToString();
+    }
 }

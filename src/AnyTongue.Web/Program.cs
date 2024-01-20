@@ -39,7 +39,7 @@ public class Program
         builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), options =>
             {
-                options.MigrationsAssembly(typeof(Program).Assembly.FullName);
+                options.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName);
             }));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

@@ -12,7 +12,7 @@ public class AppUserConfiguration : IEntityTypeConfiguration<AppUser>
         var adminEmail = "admin@example.com";
         var adminUser = new AppUser
         {
-            Id = 1,
+            Id = "00000000-0000-0000-0000-0000000ad315",
             UserName = adminEmail,
             NormalizedUserName = adminEmail.ToUpper(),
             Email = adminEmail,

@@ -16,14 +16,13 @@ namespace AnyTongue.Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("ProductVersion", "8.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("AnyTongue.Domain.Models.AppRole", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -48,39 +47,61 @@ namespace AnyTongue.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = "01ea419e-4151-48cb-a894-f734e666c7fb",
                             ConcurrencyStamp = "9238d991-0153-4ada-aaf3-57d6040f682e",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = 2,
+                            Id = "2242b904-a0ae-4588-9ce8-f2fad4240fb8",
                             ConcurrencyStamp = "1f0f17ec-738c-4a37-b7c3-2c32a4f84523",
                             Name = "Student",
                             NormalizedName = "STUDENT"
                         },
                         new
                         {
-                            Id = 3,
+                            Id = "19ebecc2-43b4-406b-9357-2ea28a5512f3",
                             ConcurrencyStamp = "e976c27d-45e1-4aca-9954-e42def238b7d",
                             Name = "ContentAdmin",
                             NormalizedName = "CONTENTADMIN"
                         },
                         new
                         {
-                            Id = 4,
+                            Id = "e317f55c-8237-435d-9796-68369cb12e1d",
                             ConcurrencyStamp = "08b8184c-1af1-40ad-a3bb-94524095caaa",
                             Name = "ContentCreator",
                             NormalizedName = "CONTENTCREATOR"
                         });
                 });
 
-            modelBuilder.Entity("AnyTongue.Domain.Models.AppUser", b =>
+            modelBuilder.Entity("AnyTongue.Domain.Models.AppRoleClaim", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("AnyTongue.Domain.Models.AppUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
@@ -143,7 +164,7 @@ namespace AnyTongue.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = "00000000-0000-0000-0000-0000000ad315",
                             AccessFailedCount = 0,
                             ConcurrencyStamp = "ecce3dc6-6fda-4b42-805d-c91ec950af6e",
                             Email = "admin@example.com",
@@ -159,7 +180,7 @@ namespace AnyTongue.Persistence.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
+            modelBuilder.Entity("AnyTongue.Domain.Models.AppUserClaim", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -171,30 +192,9 @@ namespace AnyTongue.Persistence.Migrations
                     b.Property<string>("ClaimValue")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
@@ -203,21 +203,20 @@ namespace AnyTongue.Persistence.Migrations
                     b.ToTable("AspNetUserClaims", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+            modelBuilder.Entity("AnyTongue.Domain.Models.AppUserLogin", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -226,13 +225,13 @@ namespace AnyTongue.Persistence.Migrations
                     b.ToTable("AspNetUserLogins", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+            modelBuilder.Entity("AnyTongue.Domain.Models.AppUserRole", b =>
                 {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
+                    b.Property<string>("RoleId")
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -243,23 +242,21 @@ namespace AnyTongue.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = 1,
-                            RoleId = 1
+                            UserId = "00000000-0000-0000-0000-0000000ad315",
+                            RoleId = "01ea419e-4151-48cb-a894-f734e666c7fb"
                         });
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+            modelBuilder.Entity("AnyTongue.Domain.Models.AppUserToken", b =>
                 {
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("varchar(128)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Value")
                         .HasColumnType("longtext");
@@ -269,7 +266,7 @@ namespace AnyTongue.Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
+            modelBuilder.Entity("AnyTongue.Domain.Models.AppRoleClaim", b =>
                 {
                     b.HasOne("AnyTongue.Domain.Models.AppRole", null)
                         .WithMany()
@@ -278,7 +275,7 @@ namespace AnyTongue.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+            modelBuilder.Entity("AnyTongue.Domain.Models.AppUserClaim", b =>
                 {
                     b.HasOne("AnyTongue.Domain.Models.AppUser", null)
                         .WithMany()
@@ -287,7 +284,7 @@ namespace AnyTongue.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+            modelBuilder.Entity("AnyTongue.Domain.Models.AppUserLogin", b =>
                 {
                     b.HasOne("AnyTongue.Domain.Models.AppUser", null)
                         .WithMany()
@@ -296,7 +293,7 @@ namespace AnyTongue.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+            modelBuilder.Entity("AnyTongue.Domain.Models.AppUserRole", b =>
                 {
                     b.HasOne("AnyTongue.Domain.Models.AppRole", null)
                         .WithMany()
@@ -311,7 +308,7 @@ namespace AnyTongue.Persistence.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+            modelBuilder.Entity("AnyTongue.Domain.Models.AppUserToken", b =>
                 {
                     b.HasOne("AnyTongue.Domain.Models.AppUser", null)
                         .WithMany()

@@ -20,6 +20,9 @@
   <ItemGroup>
     <Using Include="Microsoft.EntityFrameworkCore" />
     <Using Include="AnyTongue.Domain.Models" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AnyTongue.Domain\AnyTongue.Domain.csproj" />
   </ItemGroup>
 

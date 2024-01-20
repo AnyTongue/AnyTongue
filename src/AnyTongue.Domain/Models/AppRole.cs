@@ -2,7 +2,7 @@
 
 namespace AnyTongue.Domain.Models;
 
-public class AppRole : IdentityRole<int>
+public class AppRole : IdentityRole
 {
     public AppRole() { }
 

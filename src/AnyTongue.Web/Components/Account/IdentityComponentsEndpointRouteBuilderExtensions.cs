@@ -3,7 +3,6 @@ using System.Text.Json;
 using AnyTongue.Domain.Models;
 using AnyTongue.Web.Components.Account.Pages;
 using AnyTongue.Web.Components.Account.Pages.Manage;
-using AnyTongue.Web.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Http.Extensions;
@@ -69,7 +68,7 @@ internal static class IdentityComponentsEndpointRouteBuilderExtensions
 
             // Only include personal data for download
             var personalData = new Dictionary<string, string>();
-            var personalDataProps = typeof(ApplicationUser).GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(PersonalDataAttribute)));
+            var personalDataProps = typeof(AppUser).GetProperties().Where(prop => Attribute.IsDefined(prop, typeof(PersonalDataAttribute)));
 
             foreach (var p in personalDataProps)
             {

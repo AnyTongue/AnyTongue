@@ -1,0 +1,1 @@
+dotnet ef database update --startup-project .\src\AnyTongue.Web\ --project .\src\AnyTongue.Persistence\ --context AppDbContext

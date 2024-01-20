@@ -3,7 +3,6 @@
 @using System.Text
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.AspNetCore.WebUtilities
-@using AnyTongue.Web.Data
 
 @inject UserManager<AppUser> UserManager
 @inject SignInManager<AppUser> SignInManager
@@ -38,7 +37,7 @@
                 "Account/Login", "Error: Invalid email change confirmation link.", HttpContext);
         }
 
-        var user = await UserManager.FindByIdAsync(UserId);
+        var user = await UserManager.FindByEmailAsync(Email);
         if (user is null)
         {
             message = "Unable to find user with Id '{userId}'";
