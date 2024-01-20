@@ -16,9 +16,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="MudBlazor" Version="6.0.15" />
+    <PackageReference Include="MudBlazor.ThemeManager" Version="1.0.7" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AnyTongue.Application\AnyTongue.Application.csproj" />
     <ProjectReference Include="..\AnyTongue.Web.Client\AnyTongue.Web.Client.csproj" />
     <ProjectReference Include="..\AnyTongue.Infrastructure\AnyTongue.Infrastructure.csproj" />
   </ItemGroup>

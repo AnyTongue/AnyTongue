@@ -1,10 +1,11 @@
 ﻿@page "/Account/Manage/ResetAuthenticator"
 
+@using AnyTongue.Domain.Models
 @using Microsoft.AspNetCore.Identity
 @using AnyTongue.Web.Data
 
-@inject UserManager<ApplicationUser> UserManager
-@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<AppUser> UserManager
+@inject SignInManager<AppUser> SignInManager
 @inject IdentityUserAccessor UserAccessor
 @inject IdentityRedirectManager RedirectManager
 @inject ILogger<ResetAuthenticator> Logger

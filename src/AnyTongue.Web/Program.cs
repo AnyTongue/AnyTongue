@@ -1,10 +1,14 @@
+using AnyTongue.Application.Extensions;
+using AnyTongue.Domain.Models;
+using AnyTongue.Persistence;
 using AnyTongue.Web.Client.Pages;
 using AnyTongue.Web.Components;
 using AnyTongue.Web.Components.Account;
-using AnyTongue.Web.Data;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MudBlazor.Services;
+using Serilog;
 
 namespace AnyTongue.Web;
 public class Program
@@ -12,6 +16,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        builder.Host.UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration));
 
         // Add services to the container.
         builder.Services.AddRazorComponents()
@@ -31,19 +36,21 @@ public class Program
             .AddIdentityCookies();
 
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), options =>
             {
                 options.MigrationsAssembly(typeof(Program).Assembly.FullName);
             }));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-        builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-            .AddEntityFrameworkStores<ApplicationDbContext>()
+        builder.Services.AddIdentityCore<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            .AddEntityFrameworkStores<AppDbContext>()
             .AddSignInManager()
             .AddDefaultTokenProviders();
+        builder.Services.AddMudServices();
+        builder.Services.RegisterApplicationServices();
 
-        builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+        builder.Services.AddSingleton<IEmailSender<AppUser>, IdentityNoOpEmailSender>();
 
         var app = builder.Build();
 
