@@ -51,9 +51,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.Worker.Tests", "t
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.MigrationsConsole", "src\AnyTongue.MigrationsConsole\AnyTongue.MigrationsConsole.csproj", "{6D7E1265-A356-4A0F-BC75-FDF5C9726DBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyTongue.Web", "src\AnyTongue.Web\AnyTongue.Web.csproj", "{B62FDCEB-80C3-4BAC-A7F7-F2B9DFE80D01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.Web", "src\AnyTongue.Web\AnyTongue.Web.csproj", "{B62FDCEB-80C3-4BAC-A7F7-F2B9DFE80D01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyTongue.Web.Client", "src\AnyTongue.Web.Client\AnyTongue.Web.Client.csproj", "{65541CC1-2975-4BDE-A034-BC8D1EC3218C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.Web.Client", "src\AnyTongue.Web.Client\AnyTongue.Web.Client.csproj", "{65541CC1-2975-4BDE-A034-BC8D1EC3218C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

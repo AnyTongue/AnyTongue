@@ -2,6 +2,35 @@
 
 @inject NavigationManager NavigationManager
 
+<MudNavMenu>
+  <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
+  <MudNavLink Href="counter" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Add">Counter</MudNavLink>
+  <MudNavLink Href="weather" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Cloud">Weather</MudNavLink>
+  <MudNavLink Href="auth" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Lock">Auth Required</MudNavLink>
+
+  <AuthorizeView>
+    <Authorized>
+      <MudNavLink Href="Account/Manage" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.ManageAccounts">@context.User.Identity?.Name</MudNavLink>
+      <MudNavLink Icon="@Icons.Material.Filled.Logout">
+        <form action="Account/Logout" method="post">
+          <AntiforgeryToken />
+          <input type="hidden" name="ReturnUrl" value="@currentUrl" />
+          <button type="submit">
+            Logout
+          </button>
+        </form>
+      </MudNavLink>
+    </Authorized>
+    <NotAuthorized>
+      <MudNavLink Href="Account/Register" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.AppRegistration">Register</MudNavLink>
+      <MudNavLink Href="Account/Login" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Login">Login</MudNavLink>
+    </NotAuthorized>
+  </AuthorizeView>
+
+</MudNavMenu>
+
+
+@* 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">AnyTongue.Web</a>
@@ -67,7 +96,7 @@
             </NotAuthorized>
         </AuthorizeView>
     </nav>
-</div>
+</div> *@
 
 @code {
     private string? currentUrl;
