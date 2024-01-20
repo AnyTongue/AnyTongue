@@ -27,6 +27,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
+		apply-migration.ps1 = apply-migration.ps1
+		ef-database-update.ps1 = ef-database-update.ps1
+		remove-migration.ps1 = remove-migration.ps1
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyTongue.Styles", "src\AnyTongue.Styles\AnyTongue.Styles.csproj", "{690AB0CC-BDC3-4CD0-826F-14C175E75736}"
