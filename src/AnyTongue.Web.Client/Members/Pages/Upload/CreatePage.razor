@@ -1,11 +1,12 @@
 ﻿@page "/members/upload/create"
+@rendermode InteractiveServer
 
 <PageTitle>Create content</PageTitle>
 
 <MudText Typo="Typo.h4">Create content</MudText>
 
 <MudForm @ref="_form" @bind-IsValid="@_isValid" @bind-Errors="@_errors" Class="gap-4">
-  <MudSelect @bind-Value="@_country" Label="With render fragements" Variant="Variant.Outlined">
+  <MudSelect @bind-Value="@_country" Label="Text Language" Variant="Variant.Outlined">
     <MudSelectItem Value="@("Germany")">
       <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" height="14" class="mr-1" /> Germany
     </MudSelectItem>
@@ -19,7 +20,7 @@
   <MudTextField T="string" Label="Text" Lines="15" Required="true" RequiredError="Input text is required!" />
 
   <div class="d-flex align-center justify-space-between">
-    <MudButton Variant="Variant.Filled" Color="Color.Primary" Disabled="@(!_isValid)" Class="ml-auto">Register</MudButton>
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" Disabled="@(!_isValid)" Class="mt-4 ml-auto">Create</MudButton>
   </div>
 </MudForm>
 

@@ -1,7 +1,7 @@
 using AnyTongue.Application.Extensions;
 using AnyTongue.Domain.Models;
 using AnyTongue.Persistence;
-using AnyTongue.Web.Client.Pages;
+using AnyTongue.Web.Client.Public.Pages;
 using AnyTongue.Web.Components;
 using AnyTongue.Web.Components.Account;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -75,7 +75,7 @@ public class Program
         app.MapRazorComponents<App>()
             .AddInteractiveServerRenderMode()
             .AddInteractiveWebAssemblyRenderMode()
-            .AddAdditionalAssemblies(typeof(Counter).Assembly);
+            .AddAdditionalAssemblies(typeof(Home).Assembly);
 
         // Add additional endpoints required by the Identity /Account Razor components.
         app.MapAdditionalIdentityEndpoints();

@@ -1,8 +1,11 @@
-﻿<MudNavMenu>
+﻿@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<MudNavMenu>
   <MudNavLink Href="members/dashboard" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Dashboard</MudNavLink>
-  <MudNavGroup Title="Upload Content" Expanded="false" Icon="@Icons.Material.Filled.Add">
-    <MudNavLink Href="members/upload/bulk" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Bulk Upload</MudNavLink>
-    <MudNavLink Href="members/upload/zip" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.FolderZip">Zip Upload</MudNavLink>
+  <MudNavGroup Title="Upload Content" Expanded="true" Icon="@Icons.Material.Filled.Add">
+    @* <MudNavLink Href="members/upload/bulk" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Bulk Upload</MudNavLink> *@
+    @* <MudNavLink Href="members/upload/zip" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.FolderZip">Zip Upload</MudNavLink> *@
     <MudNavLink Href="members/upload/create" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Brush">Create Content</MudNavLink>
   </MudNavGroup>
   <MudNavLink Href="members/courses" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Flag">Courses</MudNavLink>

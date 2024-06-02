@@ -1,0 +1,27 @@
+﻿@page "/"
+@layout PublicMainLayout
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavManager
+
+<PageTitle>Index</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
+
+Welcome to your new app.
+
+@code {
+  protected override async Task OnInitializedAsync()
+  {
+    if (AuthenticationStateProvider is null)
+    {
+      return;
+    }
+
+    var state = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+
+    if (state is { User: not null } user && user.User.Identity.IsAuthenticated)
+    {
+      NavManager.NavigateTo("members");
+    }
+  }
+}

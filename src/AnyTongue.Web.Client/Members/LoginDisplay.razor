@@ -1,0 +1,36 @@
+﻿@inject NavigationManager NavigationManager
+
+<AuthorizeView>
+  <Authorized>
+    <MudIconButton Icon="@Icons.Material.Filled.Person" Color="Color.Inherit" Link="Account/Manage" Target="_blank">Hello, @context.User.Identity?.Name!</MudIconButton>
+    <form method="post" action="Account/LogOut">
+      <AntiforgeryToken />
+      <input type="hidden" name="ReturnUrl" value="@currentUrl" />
+      <MudButton StartIcon="@Icons.Material.Filled.Logout" Color="Color.Inherit" ButtonType="ButtonType.Submit">Log out</MudButton>
+    </form>
+  </Authorized>
+  <NotAuthorized>
+    <MudButton StartIcon="@Icons.Material.Filled.Login" Color="Color.Inherit" Href="Account/Login">Log in</MudButton>
+  </NotAuthorized>
+</AuthorizeView>
+
+@code {
+  private string? currentUrl;
+
+  protected override void OnInitialized()
+  {
+    currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+    NavigationManager.LocationChanged += OnLocationChanged;
+  }
+
+  private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+  {
+    currentUrl = NavigationManager.ToBaseRelativePath(e.Location);
+    StateHasChanged();
+  }
+
+  public void Dispose()
+  {
+    NavigationManager.LocationChanged -= OnLocationChanged;
+  }
+}
