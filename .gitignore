@@ -350,3 +350,4 @@ MigrationBackup/
 .ionide/
 src/AnyTongue.Web/wwwroot/css/bootstrap/
 src/AnyTongue.Web/wwwroot/css/open-iconic/
+src/AnyTongue.Web/wwwroot/assets/flags/Thumbs.db
