@@ -1,0 +1,25 @@
+﻿<MudSelect @bind-Value="@_selectedValue" Label="Text Language" Variant="Variant.Outlined">
+  @foreach(var kv in _langFlags)
+  {
+    <MudSelectItem Value="@(kv.Key)">
+      <img src="assets/flags/@kv.Value" height="14" class="mr-1" /> @kv.Key
+    </MudSelectItem>
+  }
+</MudSelect>
+
+@code {
+  private static Dictionary<string, string> _langFlags = new()
+  {
+    { "German", "Flag_of_Germany.svg" },
+    { "Kyrgyz", "Flag_of_Kyrgyzstan.svg" },
+    { "English UK", "Flag_of_the_United_Kingdom.svg" },
+    { "Hebrew (ancient)", "Flag_of_Israel.svg" },
+    { "Greek (Koine)", "Flag_of_Greece.svg" },
+  };
+
+  private string _selectedValue = "English UK";
+
+  [Parameter]
+  public string? SelectedValue { get; set; }
+
+}
