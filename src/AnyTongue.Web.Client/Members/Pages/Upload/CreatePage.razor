@@ -1,20 +1,20 @@
 ﻿@page "/members/upload/create"
 @rendermode InteractiveServer
 
-<PageTitle>Create content</PageTitle>
+<PageTitle>Create Course</PageTitle>
 
-<MudText Typo="Typo.h4">Create content</MudText>
+<MudText Typo="Typo.h4">Create Course</MudText>
 
 <MudForm @ref="_form" @bind-IsValid="@_isValid" @bind-Errors="@_errors" Class="gap-4">
   <MudSelect @bind-Value="@_country" Label="Text Language" Variant="Variant.Outlined">
-    <MudSelectItem Value="@("Germany")">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" height="14" class="mr-1" /> Germany
+    <MudSelectItem Value="@("German")">
+      <img src="assets/flags/Flag_of_Germany.svg" height="14" class="mr-1" /> German
     </MudSelectItem>
-    <MudSelectItem Value="@("Kyrgyzstan")">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Flag_of_Kyrgyzstan.svg" height="14" class="mr-1" /> Kyrgyzstan
+    <MudSelectItem Value="@("Kyrgyz")">
+      <img src="assets/flags/Flag_of_Kyrgyzstan.svg" height="14" class="mr-1" /> Kyrgyz
     </MudSelectItem>
     <MudSelectItem Value="@("English")">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg" height="14" class="mr-1" /> English
+      <img src="assets/flags/Flag_of_the_United_Kingdom.svg" height="14" class="mr-1" /> English
     </MudSelectItem>
   </MudSelect>
   <MudTextField T="string" Label="Text" Lines="15" Required="true" RequiredError="Input text is required!" />
@@ -30,4 +30,6 @@
   MudTextField<string> pwField1;
   MudForm? _form;
   string _country = "Germany";
+
+
 }
