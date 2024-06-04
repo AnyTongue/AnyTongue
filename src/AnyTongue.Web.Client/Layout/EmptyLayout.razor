@@ -1,7 +1,8 @@
 ﻿@using AnyTongue.Web.Client.Components
 @inherits LayoutComponentBase
 
-<AppMudThemeProvider />
-<AppMudProviders />
+<AppMudThemeProvider @rendermode="InteractiveServer" />
+<AppMudProviders @rendermode="InteractiveServer" />
+<MudSnackbarProvider @rendermode="InteractiveServer" />
 
 @Body
