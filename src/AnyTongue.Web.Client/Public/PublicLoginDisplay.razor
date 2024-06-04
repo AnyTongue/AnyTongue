@@ -2,8 +2,8 @@
 
 <AuthorizeView>
   <Authorized>
-    <MudIconButton Icon="@Icons.Material.Filled.Home" Color="Color.Inherit" Link="members/dashboard">Home</MudIconButton>
-    <MudIconButton Icon="@Icons.Material.Filled.Person" Color="Color.Inherit" Link="Account/Manage" Target="_blank">Hello, @context.User.Identity?.Name!</MudIconButton>
+    <MudIconButton Icon="@Icons.Material.Filled.Home" Color="Color.Inherit" Href="members/dashboard">Home</MudIconButton>
+    <MudIconButton Icon="@Icons.Material.Filled.Person" Color="Color.Inherit" Href="Account/Manage" Target="_blank">Hello, @context.User.Identity?.Name!</MudIconButton>
     <form method="post" action="Account/LogOut">
       <AntiforgeryToken />
       <input type="hidden" name="ReturnUrl" value="@currentUrl" />
