@@ -1,14 +1,14 @@
 ﻿@page "/members/upload/create"
-@rendermode InteractiveServer
+@rendermode InteractiveAuto
 
 <PageTitle>Create Course</PageTitle>
 
 <MudText Typo="Typo.h4">Create Course</MudText>
 
-<MudForm @ref="_form" @bind-IsValid="@_isValid" @bind-Errors="@_errors" Class="gap-4">
+<MudForm Model="_formModel" @ref="_form" @bind-IsValid="@_isValid" @bind-Errors="@_errors" Class="gap-4">
   <div class="d-flex flex-grow-1 gap-4">
-    <LanguageSelect SelectedValue="@_sourceLang"></LanguageSelect>
-    <LanguageSelect SelectedValue="@_sourceLang"></LanguageSelect>
+    <LanguageSelect SelectedValue="@_formModel.SourceLanguage"></LanguageSelect>
+    <LanguageSelect SelectedValue="@_formModel.TargetLanguage"></LanguageSelect>
   </div>
 
   <div class="d-flex align-center justify-space-between">
@@ -20,6 +20,7 @@
   bool _isValid;
   string[] _errors = { };
   MudForm? _form;
-  string _sourceLang = "German";
-  string _targetLang = "Hebrew";
+  CreateCourseFormModel _formModel = new() { SourceLanguage = "German", TargetLanguage = "Hebrew" };
+
+
 }
